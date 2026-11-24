@@ -1,0 +1,6 @@
+{
+  "name": "FullCalendar Studio",
+  "description": "Full-sized drag-and-drop event calendar workspace powered by FullCalendar v7 with Month, Week, Day, List, and Multi-Month Year views, official themes, external task dragging, locales, and ICS export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

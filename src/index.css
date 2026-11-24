@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@import "@fullcalendar/react/skeleton.css";
+@import "@fullcalendar/react/themes/breezy/theme.css";
+@import "@fullcalendar/react/themes/breezy/palettes/indigo.css";
+@import "@fullcalendar/react/themes/monarch/theme.css";
+@import "@fullcalendar/react/themes/monarch/palettes/blue.css";
+@import "@fullcalendar/react/themes/forma/theme.css";
+@import "@fullcalendar/react/themes/forma/palettes/blue.css";
+@import "@fullcalendar/react/themes/pulse/theme.css";
+@import "@fullcalendar/react/themes/pulse/palettes/blue.css";
+@import "@fullcalendar/react/themes/classic/theme.css";
+@import "@fullcalendar/react/themes/classic/palette.css";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Harmonize FullCalendar v7 canvas typography & tabular alignment */
+.fc-studio-host {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+.fc-studio-host .fc {
+  height: 100%;
+  font-family: var(--font-sans);
+}
+
+/* Subtle dark-mode canvas surface harmonization */
+.dark .fc-studio-host {
+  color-scheme: dark;
+}
+
+/* Ensure dragged backlog mirror looks crisp while dragging */
+.fc-event-dragging {
+  opacity: 0.92;
+  cursor: grabbing !important;
+}
+
+/* Subtle custom scrollbars for sidebar & calendar */
+.studio-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.studio-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.studio-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
+.studio-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
